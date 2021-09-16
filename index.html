@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Counter</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/053615227f.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Start Header -->
+    <header class="bg-image">
+        <nav class="navbar fixed-top navbar-expand-lg" style="background-color: #00CBA9;">
+            <div class="container">
+                <a class="navbar-brand text-light" href="#">VolksWagen</a>
+                <button class="navbar-toggler border-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light fs-5" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light fs-5" href="#">Booking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light fs-5" href="#">Bus Stoppes</a>
+                        </li>
+                        <li class="nav-item dropdown fs-5">
+                            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light fs-5" href="#">Satisfy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light fs-5" href="#">Contact <i class="fas fa-street-view"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="text-center pb-2" id="search-field" style="background-color: #00CBA9;">
+            <h1 class="text-light mb-3">VolksWagen Service In Germany</h1>
+            <div class="input-group mb-3 w-50 mx-auto"> <input type="text" class="form-control border-0 ps-4"
+                    placeholder="Location" aria-label="Username"><i class="fas fa-search-location"
+                    style="position: absolute; padding-top: 9px; padding-left: 5px; color: #00CBA9;"></i>
+
+                <span class="input-group-text border-0 text-light fw-bold" style="background-color: #00CBA9;">TO<i
+                        class="fas fa-bus ps-1"></i></span>
+
+                <!-- <i class="fas fa-route"></i> -->
+                <input type="text" class="form-control border-0 ps-4" placeholder="Destination" aria-label="Server">
+
+
+                <span class="input-group-text fw-bold" id="basic-addon2">HappyJourney <i
+                        class="fas fa-car ps-2"></i></span>
+            </div>
+
+        </section>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#00cba9" fill-opacity="1"
+                d="M0,192L24,176C48,160,96,128,144,133.3C192,139,240,181,288,213.3C336,245,384,267,432,250.7C480,235,528,181,576,165.3C624,149,672,171,720,154.7C768,139,816,85,864,80C912,75,960,117,1008,112C1056,107,1104,53,1152,53.3C1200,53,1248,107,1296,138.7C1344,171,1392,181,1416,186.7L1440,192L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z">
+            </path>
+        </svg>
+    </header> <!-- End header -->
+
+    <!-- start main  -->
+    <main>
+        <section>
+            <!-- a section use like phero -->
+            <div class="container">
+                <div class="row w-75 shadow-lg mx-auto box">
+                    <!-- pick Location, confirm Ticket(spinner), start Journey--overall progress -->
+                    <div class="col-md-4 text-center">
+                        <h3>Pick-location <i class="fas fa-mobile" style="color: #00CBA9;"></i></h3>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" role="progressbar"
+                                style="width: 50%; background-color: #00CBA9;" aria-valuenow="50" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3>Confirm <i class="fas fa-check-circle" style="color: #00CBA9;"></i></h3>
+                        <div class="progress bg-transparent">
+                            <div class="progress-bar progress-bar-striped spinner-grow" role="progressbar status"
+                                style="width: 75%; background-color: #00CBA9;" aria-valuenow="75" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3>Start Journey <i class="fas fa-smile-wink" style="color: #00CBA9;"></i></h3>
+                        <div class="progress" class="spinner-grow" role="status">
+                            <div class="progress-bar progress-bar-striped" role="progressbar"
+                                style="width: 100%; background-color: #00CBA9;" aria-valuenow="100" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section 1 -->
+        <section class="my-5">
+            <div class="container pt-5">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="col-md-7 p-3">
+                        <img class="img-fluid pt-4" src="./images/cover-stn.png" alt="">
+                    </div>
+                    <!-- 2nd div  -->
+                    <div class="col-md-5">
+                        <h3 class="text-center mb-3">Confirm your sit</h3>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon2">Full Name</span>
+                            <input type="text" class="form-control" placeholder="Enter your full Name"
+                                aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon2">Phone Number</span>
+                            <input type="text" class="form-control" placeholder="Phone Number" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Give your email"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <span class="input-group-text" id="basic-addon2">@Gmail</span>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" id="basic-addon2">City</button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Venice</a></li>
+                                <li><a class="dropdown-item" href="#">Norwa</a></li>
+                                <li><a class="dropdown-item" href="#">Switzerland</a></li>
+                            </ul>
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                                placeholder="explain why are you want to go">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">$</span>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
+                                placeholder="is your pocket is healthy? tell us">
+                            <span class="input-group-text">.00</span>
+                        </div>
+
+                        <div class="input-group mb-3 d-flex align-items-center">
+                            <input type="radio" class="mx-2">Single trip
+                            <input type="radio" class="mx-2">Double trip
+                            <input type="radio" class="mx-2">Couple trip
+                            <input type="radio" class="mx-2">Family trip
+                            <span class="input-group-text mx-2" id="basic-addon2"><i
+                                    class="fas fa-luggage-cart"></i></span>
+                        </div>
+                        <div class="form-control mb-3">
+                            <div class="input-group text-center">
+                                <input type="checkbox" class="mx-2 mt-1">
+                                <h5 class="position-relative">Do you have access from Parents?</h5>
+                            </div>
+                            <div class="input-group text-center">
+                                <input type="checkbox" class="mx-2 mt-1">
+                                <h5 class="position-relative">Do you have access from gof?</h5>
+                            </div>
+                            <div class="input-group text-center">
+                                <input type="checkbox" class="mx-2 mt-1">
+                                <h5 class="position-relative">Do you have access?</h5>
+                            </div>
+                        </div>
+
+                        <div class=" input-group">
+                            <span class="input-group-text">Any Alert</span>
+                            <textarea class="form-control" aria-label="With textarea"
+                                placeholder="If you wanna say something  msg for safety"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- collect Ticket -->
+        <section class="my-5">
+            <!-- a section use like phero -->
+            <div class="container">
+                <div class="row w-75 shadow-lg mx-auto box">
+                    <h2 class="text-center mb-3">Collect your Ticket From this Counter</h2>
+                    <div class="col-md-4 text-center">
+                        <h3>Norway <i class="fas fa-mobile" style="color: #00CBA9;"></i></h3>
+                        <h3>Subway <i class="fas fa-mobile" style="color: #00CBA9;"></i></h3>
+                        <h3>Kubway <i class="fas fa-mobile" style="color: #00CBA9;"></i></h3>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3>Netharland <i class="fas fa-check-circle" style="color: #00CBA9;"></i></h3>
+                        <h3>Metharland <i class="fas fa-check-circle" style="color: #00CBA9;"></i></h3>
+                        <h3>Tetharland <i class="fas fa-check-circle" style="color: #00CBA9;"></i></h3>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3>Naikkamora <i class="fas fa-smile-wink" style="color: #00CBA9;"></i></h3>
+                        <h3>Laikkamora <i class="fas fa-smile-wink" style="color: #00CBA9;"></i></h3>
+                        <h3>Taikkamora <i class="fas fa-smile-wink" style="color: #00CBA9;"></i></h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end Ticket -->
+        <!-- section 2 -->
+        <section class="my-5">
+            <div class="container my-5">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-6">
+                        <h3 class="text-center mb-4">Why Booking Online</h3>
+                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne">
+                                        Accordion Item #1
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body">
+                                        <strong>This is the first item's accordion body.</strong> It is shown by
+                                        default, until the collapse plugin adds the appropriate classes that we use to
+                                        style each element. These classes control the overall appearance, as well as the
+                                        showing and hiding via CSS transitions. You can modify any of this with custom
+                                        CSS or overriding our default variables. It's also worth noting that just about
+                                        any HTML can go within the <code>.accordion-body</code>, though the transition
+                                        does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseTwo">
+                                        Accordion Item #2
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body">
+                                        <strong>This is the second item's accordion body.</strong> It is hidden by
+                                        default, until the collapse plugin adds the appropriate classes that we use to
+                                        style each element. These classes control the overall appearance, as well as the
+                                        showing and hiding via CSS transitions. You can modify any of this with custom
+                                        CSS or overriding our default variables. It's also worth noting that just about
+                                        any HTML can go within the <code>.accordion-body</code>, though the transition
+                                        does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseThree">
+                                        Accordion Item #3
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingThree">
+                                    <div class="accordion-body">
+                                        <strong>This is the third item's accordion body.</strong> It is hidden by
+                                        default, until the collapse plugin adds the appropriate classes that we use to
+                                        style each element. These classes control the overall appearance, as well as the
+                                        showing and hiding via CSS transitions. You can modify any of this with custom
+                                        CSS or overriding our default variables. It's also worth noting that just about
+                                        any HTML can go within the <code>.accordion-body</code>, though the transition
+                                        does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="./images/Order_ride.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- collect Ticket -->
+        <section class="my-5">
+            <!-- a section use like phero -->
+            <div class="container">
+                <div class="row w-75 shadow-lg mx-auto box">
+                    <h3 class="text-center mb-2">Associate member with us</h3>
+                    <div class="col-md-4 text-center">
+                        <h3>Harley Davidson
+                            <i class="fas fa-car" style="color: #00CBA9;"></i>
+                        </h3>
+                        <h3>Kavidson
+                            <i class="fas fa-car" style="color: #00CBA9;"></i>
+                        </h3>
+
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3>Yamaha
+                            <i class="fas fa-car" style="color: #00CBA9;"></i>
+                        </h3>
+                        <h3>Royal Enfield
+                            <i class="fas fa-car" style="color: #00CBA9;"></i>
+                        </h3>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3>Toyota
+                            <i class="fas fa-car" style="color: #00CBA9;"></i>
+                        </h3>
+                        <h3>Hundai
+                            <i class="fas fa-car" style="color: #00CBA9;"></i>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end Ticket -->
+
+        <!-- section 3 -->
+        <section>
+            <div class="container">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="./images/pride.png" alt="">
+                    </div>
+                    <div class="col-md-6 w-50">
+                        <h3 class="text-center mb-4">Customer Satisfaction</h3>
+
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner" style="background-color: #00CBA9;">
+                                <div class="carousel-item active">
+                                    <img src="./images/Container_ship.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./images/Container_ship.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./images/Container_ship.png" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev " style="background-color: #00CBA9;" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next " type="button" style="background-color: #00CBA9;"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+
+        </section>
+    </main>
+
+    <!-- <div class="card h-100">
+        <img src="/images/Weather_notification.png" class="card-img-top"
+            alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting
+                text below as a natural lead-in to additional content.
+                This content is a little bit longer.</p>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+    </div> -->
+
+    <footer class="pt-5">
+        <div class="container">
+            <div class="row mt-5">
+                <hr>
+                <div class="col-lg-3">
+                    <h4 class="pb-1">Find your option</h4>
+                    <ul class="list-unstyled" style="color: #00CBA9;">
+                        <li class="pb-1">Location</li>
+                        <li class="pb-1">Service</li>
+                        <li class="pb-1">Booking</li>
+                        <li class="pb-1">Get Ticket</li>
+                        <li class="pb-1">Destination</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="pb-1">Hot Link Bus</h4>
+                    <ul class="list-unstyled" style="color: #00CBA9;">
+                        <li class="pb-1">Murir Tin</li>
+                        <li class="pb-1">Dhaner Tin</li>
+                        <li class="pb-1">Chaler Tin</li>
+                        <li class="pb-1">Harar Tin</li>
+                        <li class="pb-1">Rongberonger Tin</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4 class="pb-1">Govt Link</h4>
+                    <ul class="list-unstyled" style="color: #00CBA9;">
+                        <li class="pb-1">Road Ministry</li>
+                        <li class="pb-1">ICT Division</li>
+                        <li class="pb-1">Education Board</li>
+                        <li class="pb-1">Development</li>
+                        <li class="pb-1">Digitalization</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 py-5">
+                    <h4 class="pb-3">Subcription</h4>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Connected with us"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="basic-addon2">Subscribe</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#00cba9" fill-opacity="1"
+                d="M0,192L24,176C48,160,96,128,144,133.3C192,139,240,181,288,213.3C336,245,384,267,432,250.7C480,235,528,181,576,165.3C624,149,672,171,720,154.7C768,139,816,85,864,80C912,75,960,117,1008,112C1056,107,1104,53,1152,53.3C1200,53,1248,107,1296,138.7C1344,171,1392,181,1416,186.7L1440,192L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z">
+            </path>
+        </svg>
+
+    </footer>
+
+    <!-- bootstrap js  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300;1,400;1,600&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* header{
+    background-image: url("/images/cover-stn.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+#search-field{
+    padding-top: 200px;
+}
+/* #destin{
+    position: absolute;
+    bottom: 0;
+} */
+#basic-addon2{
+    color: #ffffff;
+    background-color: #00CBA9;
+}
+#basic-addon2:hover{
+    border: 1px solid chocolate;
+    color: #00CBA9;
+    background-color: #ffffff;
+}
+.box{
+    display: flex;
+    padding: 15px 10px;
+    padding-bottom: -300px;
+    border-radius: 30px;
+}
+
