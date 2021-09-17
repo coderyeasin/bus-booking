@@ -65,15 +65,15 @@
         </nav>
         <section class="text-center pb-2" id="search-field" style="background-color: #00CBA9;">
             <h1 class="text-light mb-3">VolksWagen Service In Germany</h1>
-            <div class="input-group mb-3 w-50 mx-auto"> <input type="text" class="form-control border-0 ps-4"
-                    placeholder="Location" aria-label="Username"><i class="fas fa-search-location"
-                    style="position: absolute; padding-top: 9px; padding-left: 5px; color: #00CBA9;"></i>
+            <div class="input-group mb-3 w-50 mx-auto "> <input type="text" class="form-control border-0 ps-4 location"
+                    placeholder="Location" aria-label="Username"><i class="fas fa-search-location"></i>
 
                 <span class="input-group-text border-0 text-light fw-bold" style="background-color: #00CBA9;">TO<i
                         class="fas fa-bus ps-1"></i></span>
 
+                <input type="text" class="form-control border-0 ps-4 position-relative" placeholder="Destination"
+                    aria-label="Server">
                 <!-- <i class="fas fa-route"></i> -->
-                <input type="text" class="form-control border-0 ps-4" placeholder="Destination" aria-label="Server">
 
 
                 <span class="input-group-text fw-bold" id="basic-addon2">HappyJourney <i
@@ -93,9 +93,8 @@
         <section>
             <!-- a section use like phero -->
             <div class="container">
-                <div class="row w-75 shadow-lg mx-auto box">
-                    <!-- pick Location, confirm Ticket(spinner), start Journey--overall progress -->
-                    <div class="col-md-4 text-center">
+                <div class="row w-75 mt-5 mt-lg-0 shadow-lg mx-auto box translate-middle-y" id="locate">
+                    <div class="col-md-4 text-center mt-5 mt-lg-0 pt-5 pt-lg-0">
                         <h3>Pick-location <i class="fas fa-mobile" style="color: #00CBA9;"></i></h3>
                         <div class="progress">
                             <div class="progress-bar progress-bar-striped" role="progressbar"
@@ -123,14 +122,14 @@
             </div>
         </section>
         <!-- section 1 -->
-        <section class="my-5">
-            <div class="container pt-5">
+        <section>
+            <div class="container">
                 <div class="row d-flex justify-content-between align-items-center">
-                    <div class="col-md-7 p-3">
-                        <img class="img-fluid pt-4" src="./images/cover-stn.png" alt="">
+                    <div class="col-md-7 p-lg-3 position-relative">
+                        <img class="img-fluid pt-lg-4" src="./images/cover-stn.png" alt="">
                     </div>
                     <!-- 2nd div  -->
-                    <div class="col-md-5">
+                    <div class="col-md-5 my-3">
                         <h3 class="text-center mb-3">Confirm your sit</h3>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon2">Full Name</span>
@@ -161,10 +160,10 @@
                         </div>
 
                         <div class="input-group mb-3">
-                            <span class="input-group-text">$</span>
+                            <span class="input-group-text" id="basic-addon2">$</span>
                             <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
                                 placeholder="is your pocket is healthy? tell us">
-                            <span class="input-group-text">.00</span>
+                            <span class="input-group-text" id="basic-addon2">.00</span>
                         </div>
 
                         <div class="input-group mb-3 d-flex align-items-center">
@@ -191,7 +190,7 @@
                         </div>
 
                         <div class=" input-group">
-                            <span class="input-group-text">Any Alert</span>
+                            <span class="input-group-text" id="basic-addon2">Any Reason</span>
                             <textarea class="form-control" aria-label="With textarea"
                                 placeholder="If you wanna say something  msg for safety"></textarea>
                         </div>
@@ -201,32 +200,32 @@
         </section>
 
         <!-- collect Ticket -->
-        <section class="my-5">
+        <section class="my-5 py-3">
             <!-- a section use like phero -->
             <div class="container">
                 <div class="row w-75 shadow-lg mx-auto box">
-                    <h2 class="text-center mb-3">Collect your Ticket From this Counter</h2>
+                    <h2 class="text-center mb-3" style="color: #00CBA9;">Collect your Ticket From this Counter</h2>
                     <div class="col-md-4 text-center">
-                        <h3 class="mb-3">Norway <i class="fas fa-mobile" style="color: #00CBA9;"></i></h3>
-                        <h3 class="mb-3">Subway <i class="fas fa-mobile" style="color: #00CBA9;"></i></h3>
-                        <h3 class="mb-3">Kubway <i class="fas fa-mobile" style="color: #00CBA9;"></i></h3>
+                        <h5 class="mb-3">Norway <i class="fas fa-mobile" style="color: #00CBA9;"></i></h5>
+                        <h5 class="mb-3">Subway <i class="fas fa-mobile" style="color: #00CBA9;"></i></h5>
+                        <h5 class="mb-3">Kubway <i class="fas fa-mobile" style="color: #00CBA9;"></i></h5>
                     </div>
                     <div class="col-md-4 text-center">
-                        <h3 class="mb-3">Netharland <i class="fas fa-check-circle" style="color: #00CBA9;"></i></h3>
-                        <h3 class="mb-3">Metharland <i class="fas fa-check-circle" style="color: #00CBA9;"></i></h3>
-                        <h3>Tetharland <i class="fas fa-check-circle" style="color: #00CBA9;"></i></h3>
+                        <h5 class="mb-3">Netharland <i class="fas fa-check-circle" style="color: #00CBA9;"></i></h5>
+                        <h5 class="mb-3">Metharland <i class="fas fa-check-circle" style="color: #00CBA9;"></i></h5>
+                        <h5>Tetharland <i class="fas fa-check-circle" style="color: #00CBA9;"></i></h5>
                     </div>
                     <div class="col-md-4 text-center">
-                        <h3 class="mb-3">Naikkamora <i class="fas fa-smile-wink" style="color: #00CBA9;"></i></h3>
-                        <h3 class="mb-3">Laikkamora <i class="fas fa-smile-wink" style="color: #00CBA9;"></i></h3>
-                        <h3 class="mb-3">Taikkamora <i class="fas fa-smile-wink" style="color: #00CBA9;"></i></h3>
+                        <h5 class="mb-3">Naikkamora <i class="fas fa-smile-wink" style="color: #00CBA9;"></i></h5>
+                        <h5 class="mb-3">Laikkamora <i class="fas fa-smile-wink" style="color: #00CBA9;"></i></h5>
+                        <h5 class="mb-3">Taikkamora <i class="fas fa-smile-wink" style="color: #00CBA9;"></i></h5>
                     </div>
                 </div>
             </div>
         </section>
         <!-- end Ticket -->
         <!-- section 2 -->
-        <section class="my-5">
+        <section class="my-5 py-3">
             <div class="container my-5">
                 <div class="row d-flex align-items-center" style="color: #00CBA9;">
                     <div class="col-md-6">
@@ -314,32 +313,32 @@
         <section class="my-5">
             <!-- a section use like phero -->
             <div class="container">
-                <div class="row w-75 shadow-lg mx-auto box">
+                <div class="row w-75 shadow-lg mx-auto box" id="rider">
                     <h3 class="text-center mb-3" style="color: #00CBA9;">Associate member with us</h3>
                     <div class="col-md-4 text-center">
-                        <h3 class="mb-3">Harley Davidson
+                        <h5 class="mb-3">Harley Davidson
                             <i class="fas fa-car" style="color: #00CBA9;"></i>
-                        </h3>
-                        <h3 class="mb-3">Kavidson
+                        </h5>
+                        <h5 class="mb-3">Kavidson
                             <i class="fas fa-car" style="color: #00CBA9;"></i>
-                        </h3>
+                        </h5>
 
                     </div>
                     <div class="col-md-4 text-center">
-                        <h3 class="mb-3">Yamaha
+                        <h5 class="mb-3">Yamaha
                             <i class="fas fa-car" style="color: #00CBA9;"></i>
-                        </h3 class="mb-3">
-                        <h3>Royal Enfield
+                        </h5 class="mb-3">
+                        <h5>Royal Enfield
                             <i class="fas fa-car" style="color: #00CBA9;"></i>
-                        </h3>
+                        </h5>
                     </div>
                     <div class="col-md-4 text-center">
-                        <h3 class="mb-3">Toyota
+                        <h5 class="mb-3">Toyota
                             <i class="fas fa-car" style="color: #00CBA9;"></i>
-                        </h3 class="mb-3">
-                        <h3>Hundai
+                        </h5 class="mb-3">
+                        <h5>Hundai
                             <i class="fas fa-car" style="color: #00CBA9;"></i>
-                        </h3>
+                        </h5>
                     </div>
                 </div>
             </div>
@@ -359,51 +358,54 @@
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner rounded-circle" style="border: 1px solid #00CBA9;">
                                 <div class="carousel-item active">
-                                    <div class="card mx-auto">
+                                    <div class="card mx-auto border-0">
                                         <img src="/images/Weather_notification.png" class="card-img-top w-25 mx-auto"
                                             alt="...">
                                         <div class="card-body mx-5 ps-5">
                                             <h5 class="card-title text-center" style="color: #00CBA9;">David
                                                 John</h5>
-                                            <p class="card-text">This is a wider card with supporting
-                                                text below as a natural lead-in to additional content.
+                                            <p class="card-text py-3">This is a wider card with supporting
+                                                text below as a natural lead-in to additional.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <div class="card mx-auto">
-                                        <img src="/images/collab_8oes.png" class="card-img-top w-25 mx-auto" alt="...">
+                                    <div class="card mx-auto border-0">
+                                        <img src="/images/Container_ship.png" class="card-img-top w-25 mx-auto"
+                                            alt="...">
                                         <div class="card-body mx-5 ps-5">
                                             <h5 class="card-title text-center" style="color: #00CBA9;">Micheal Carry
                                             </h5>
-                                            <p class="card-text">This is a wider card with supporting
-                                                text below as a natural lead-in to additional content.
+                                            <p class="card-text py-3">This is a wider card with supporting
+                                                text below as a natural lead-in to additional.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <div class="card mx-auto">
+                                    <div class="card mx-auto border-0">
                                         <img src="/images/team_work.png" class="card-img-top w-25 mx-auto" alt="...">
-                                        <div class="card-body mx-5 ps-5">
+                                        <div class="card-body mx-5 ps-5 ">
                                             <h5 class="card-title text-center" style="color: #00CBA9;">Jessica Mende
                                             </h5>
-                                            <p class="card-text">This is a wider card with supporting
-                                                text below as a natural lead-in to additional content.
+                                            <p class="card-text py-3">This is a wider card with supporting
+                                                text below as a natural lead-in to additional.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev " type="button"
+                            <button class="carousel-control-prev" type="button"
                                 data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="carousel-control-prev-icon rounded-pill" aria-hidden="true"
+                                    style="background-color: #00CBA9;"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
                             <button class="carousel-control-next " type="button"
                                 data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="carousel-control-next-icon rounded-pill" aria-hidden="true"
+                                    style="background-color: #00CBA9;"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
@@ -411,21 +413,6 @@
 
         </section>
     </main>
-
-    <!-- <div class="card h-100">
-        <img src="/images/Weather_notification.png" class="card-img-top"
-            alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting
-                text below as a natural lead-in to additional content.
-                This content is a little bit longer.</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-    </div> -->
-
     <footer class="pt-5">
         <div class="container">
             <div class="row mt-5 text-center text-lg-start">
