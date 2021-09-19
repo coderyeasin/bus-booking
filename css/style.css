@@ -24,9 +24,12 @@ body{
     position: absolute; padding-top: 9px; padding-left: 5px; color: #00CBA9;
 }
 
-/* .fa-route{
-    position: relative; padding-top: 9px; padding-left: -10px; color: #6900cb; 
-} */
+.fa-route{
+    right: 0;
+    left: -70px;
+    position: absolute; padding-top: 9px; padding-left: 5px; padding-right: 7px;
+    color: #00CBA9; 
+}
 
 #basic-addon2{
     color: #ffffff;
